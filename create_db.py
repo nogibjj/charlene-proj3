@@ -26,7 +26,7 @@ CREATE_TABLE = """ CREATE TABLE world_cup (
 cursor.execute(CREATE_TABLE)
 conn.commit()
 
-df.to_sql('world_cup',conn, if_exists='append', index=False)
+df.to_sql('world_cup',conn, if_exists='replace', index=False)
 
 cursor.execute("SELECT * FROM world_cup")
 print(cursor.fetchall())
